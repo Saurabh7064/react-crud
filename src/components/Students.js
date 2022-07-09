@@ -1,23 +1,21 @@
-const students = [
-    {
-        id: 1,
-        name: 'Saurabh',
-        age:30,
-    },
-    {
-        id: 2,
-        name: 'Raushan',
-        age: 32,
-    }
-]
-
-export const Students = () => {
-
+import {useState} from "react";
+import {Student} from "./Student";
+export const Students = ({students}) => {
     return (
         <>
-            {students.map((student)=>
-                (<div><h3 key={student.id}>{student.name} {student.age}</h3></div>)
-            )}
+            <table >
+                <tbody>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Delete</th>
+                </tr>
+            {students.map((student)=> (
+                <Student key={student.id} student={student}/>
+                ))}
+                </tbody>
+            </table>
         </>
     )
 }
