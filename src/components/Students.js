@@ -1,5 +1,5 @@
 import {Student} from "./Student";
-export const Students = ({students,onDelete}) => {
+export const Students = ({students,onDelete,onToggle}) => {
     return (
         <>
             <table >
@@ -11,7 +11,7 @@ export const Students = ({students,onDelete}) => {
                     <th>Delete</th>
                 </tr>
             {students.map((student)=> (
-                <Student key={student.id} student={student} onDelete={onDelete} />
+                <Student key={student.id} student={student} onDelete={onDelete} onToggle={onToggle} />
                 ))}
                 </tbody>
             </table>

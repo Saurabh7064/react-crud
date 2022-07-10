@@ -1,8 +1,8 @@
 import { FaTimes } from 'react-icons/fa'
 
-export const Student = ({student, onDelete}) => {
+export const Student = ({student, onDelete, onToggle}) => {
     return (
-        <tr key={student.id}>
+        <tr className= {`${student.status === 'pass'? 'pass':'fail'}`} key={student.id} onDoubleClick={()=>onToggle(student.id)} >
             <td>{student.id}</td>
             <td>{student.name}</td>
             <td>{student.age}</td>

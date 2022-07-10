@@ -20,9 +20,11 @@ td, th {
   text-align: left;
   padding: 8px;
 }
-
-tr:nth-child(even) {
-  background-color: #dddddd;
+tr.fail {
+  background-color: #ffcccc;
+}
+tr.pass {
+  background-color: #f2ffcc;
 }
 .container {
   max-width: 500px;
