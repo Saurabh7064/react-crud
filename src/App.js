@@ -15,10 +15,15 @@ function App() {
             age: 32,
         }
     ]);
+
+    const deleteStudent = (id) =>{
+        setStudents(students.filter((student)=>student.id!==id))
+    }
+
   return (
     <div className="App">
        <Header title='React Header'/>
-        <Students students={students}/>
+        {students.length>0?(<Students students={students} onDelete={deleteStudent}/>):('No student records found')}
     </div>
   );
 }

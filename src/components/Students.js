@@ -1,6 +1,5 @@
-import {useState} from "react";
 import {Student} from "./Student";
-export const Students = ({students}) => {
+export const Students = ({students,onDelete}) => {
     return (
         <>
             <table >
@@ -12,7 +11,7 @@ export const Students = ({students}) => {
                     <th>Delete</th>
                 </tr>
             {students.map((student)=> (
-                <Student key={student.id} student={student}/>
+                <Student key={student.id} student={student} onDelete={onDelete} />
                 ))}
                 </tbody>
             </table>
