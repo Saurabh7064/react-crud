@@ -24,9 +24,26 @@ function App() {
     }
 
     //This function toggles the status of the student based on pass and fail
-    const toggleStudent = (id) => {
+    const toggleStudent = (id,status) => {
       console.log(id);
-      setStudents(students.map((student) => student.id === id && student.status=='pass' ? {...student,status:'fail'}:{...student,status:'pass'}));
+        //student.id === id && status === 'pass' ? {...student,status:'fail'}:student
+        setStudents(students.map(student => {
+          if (student.id === id) {
+              if(student.status === 'pass'){
+              return {
+                  ...student,
+                  status: 'fail'
+              }}else {
+                  return {
+                      ...student,
+                      status: 'pass'
+                  }
+              }
+          }
+          else {
+              return student
+          }
+      }));
     }
 
   return (
