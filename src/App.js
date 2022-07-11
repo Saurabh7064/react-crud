@@ -4,6 +4,7 @@ import {Students} from "./components/Students";
 import {useState} from "react";
 import {AddStudent} from "./components/AddStudent";
 function App() {
+    const [showAddStudent,setShowAddStudent] = useState(false);
     const [students, setStudents] = useState([
         {
             id: 1,
@@ -52,10 +53,11 @@ function App() {
         setStudents([...students,student]);
     }
 
+
   return (
     <div className="App">
-       <Header title='React Header'/>
-        <AddStudent onAddStudent={addStudent}/>
+        <Header title='React Header' onStudentAdd={() => { setShowAddStudent(!showAddStudent);}} showAdd={showAddStudent}/>
+        {showAddStudent && <AddStudent onAddStudent={addStudent}/>}
         {students.length>0?(<Students students={students} onDelete={deleteStudent} onToggle={toggleStudent}/>):('No student records found')}
     </div>
   );
