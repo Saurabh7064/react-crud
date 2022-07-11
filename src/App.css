@@ -12,7 +12,9 @@ body {
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
-  width: 100%;
+  width: 30%;
+  position: relative;
+  left: 454px;
 }
 
 td, th {
@@ -38,7 +40,7 @@ tr.pass {
 
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin-bottom: 20px;
 }
@@ -67,7 +69,7 @@ tr.pass {
 
 .btn-block {
   display: block;
-  width: 100%;
+  width: 30%;
 }
 
 .task {
@@ -89,6 +91,8 @@ tr.pass {
 
 .add-form {
   margin-bottom: 40px;
+  position: relative;
+  left:450px;
 }
 
 .form-control {
@@ -100,7 +104,7 @@ tr.pass {
 }
 
 .form-control input {
-  width: 100%;
+  width: 30%;
   height: 40px;
   margin: 5px;
   padding: 3px 7px;
